@@ -27,14 +27,14 @@ namespace CarRental.Business.Entities
         [DataMember]
         public DateTime ReturnDate { get; set; }
 
+
         public int EntityId
         {
             get { return ReservationId; }
             set { ReservationId = value; }
         }
 
-
-        public int OwnerAccountId
+        int IAccountOwnedEntity.OwnerAccountId
         {
             get { return AccountId; }
         }

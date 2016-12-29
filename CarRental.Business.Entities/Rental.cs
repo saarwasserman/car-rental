@@ -19,7 +19,7 @@ namespace CarRental.Business.Entities
         public int AccountId { get; set; }
 
         [DataMember]
-        public int CarID { get; set; }
+        public int CarId { get; set; }
 
         [DataMember]
         public DateTime DateRented { get; set; }
@@ -30,14 +30,14 @@ namespace CarRental.Business.Entities
         [DataMember]
         public DateTime? DateReturned { get; set; }
 
+
         public int EntityId
         {
             get { return RentalId; }
             set { RentalId = value; }
         }
 
-
-        public int OwnerAccountId
+        int IAccountOwnedEntity.OwnerAccountId
         {
             get { return AccountId; }
         }

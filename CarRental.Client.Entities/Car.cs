@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Core.Common.Core;
+using FluentValidation;
 
 namespace CarRental.Client.Entities
 {
-    public class Car : TempObjectBase
+    public class Car : ObjectBase
     {
-        int _CarId;
-        string _Description;
-        string _Color;
-        int _Year;
-        decimal _RentalPrice;
-        bool _CurrentlyRental;
+        private int _CarId;
+        private string _Description;
+        private string _Color;
+        private int _Year;
+        private decimal _RentalPrice;
+        private bool _CurrentlyRented;
 
         public int CarId
         {
@@ -24,74 +25,91 @@ namespace CarRental.Client.Entities
                 if (_CarId != value)
                 {
                     _CarId = value;
-                    OnPropertyChanged("CarId");
+                    OnPropertyChanged(() => CarId);
                 }
             }
         }
 
         public string Description
         {
-            get
-            {
-                return _Description;
-            }
-
+            get { return _Description; }
             set
             {
-                _Description = value;
+                if (_Description != value)
+                {
+                    _Description = value;
+                    OnPropertyChanged(() => Description);
+                }
             }
         }
 
         public string Color
         {
-            get
-            {
-                return _Color;
-            }
-
+            get { return _Color; }
             set
             {
-                _Color = value;
+                if (_Color != value)
+                {
+                    _Color = value;
+                    OnPropertyChanged(() => Color);
+                }
             }
         }
 
         public int Year
         {
-            get
-            {
-                return _Year;
-            }
-
+            get { return _Year; }
             set
             {
-                _Year = value;
+                if (_Year != value)
+                {
+                    _Year = value;
+                    OnPropertyChanged(() => Year);
+                }
             }
         }
 
         public decimal RentalPrice
         {
-            get
-            {
-                return _RentalPrice;
-            }
-
+            get { return _RentalPrice; }
             set
             {
-                _RentalPrice = value;
+                if (_RentalPrice != value)
+                {
+                    _RentalPrice = value;
+                    OnPropertyChanged(() => RentalPrice);
+                }
             }
         }
 
-        public bool CurrentlyRental
+        public bool CurrentlyRented
         {
-            get
-            {
-                return _CurrentlyRental;
-            }
-
+            get { return _CurrentlyRented; }
             set
             {
-                _CurrentlyRental = value;
+                if (_CurrentlyRented != value)
+                {
+                    _CurrentlyRented = value;
+                    OnPropertyChanged(() => CurrentlyRented);
+                }
             }
+        }
+
+
+        public class CarValidator : AbstractValidator<Car>
+        {
+            public CarValidator()
+            {
+                RuleFor(obj => obj.Description).NotEmpty();
+                RuleFor(obj => obj.Color).NotEmpty();
+                RuleFor(obj => obj.RentalPrice).GreaterThan(0);
+                RuleFor(obj => obj.Year).GreaterThan(2000).LessThanOrEqualTo(DateTime.Now.Year);
+            }
+        }
+
+        protected override IValidator GetValidator()
+        {
+            return new CarValidator();
         }
     }
 }
