@@ -6,6 +6,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -237,6 +238,13 @@ namespace Core.Common.Core
                 return errors.ToString();
             }
         }
+
+        #endregion
+
+
+        #region Composition
+
+        public static CompositionContainer Container { get; set; }
 
         #endregion
     }

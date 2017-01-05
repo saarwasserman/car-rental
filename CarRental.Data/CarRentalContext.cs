@@ -16,7 +16,7 @@ namespace CarRental.Data
         public CarRentalContext()
             : base("name=CarRental")
         {
-            Database.SetInitializer<CarRentalContext>(null);
+            Database.SetInitializer<CarRentalContext>(new CreateDatabaseIfNotExists<CarRentalContext>());
         }
 
         public DbSet<Account> AccountSet { get; set; }

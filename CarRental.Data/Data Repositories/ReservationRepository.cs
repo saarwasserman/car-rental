@@ -1,5 +1,5 @@
 ﻿using CarRental.Business.Entities;
-using CarRental.Data.Contracts.Repository_Interfaces;
+using CarRental.Data.Contracts;
 using Core.Common.Extensions;
 using System;
 using System.Collections.Generic;
@@ -38,12 +38,42 @@ namespace CarRental.Data.Data_Repositories
                     select e).FirstOrDefault();
         }
 
+        public IEnumerable<CustomerReservationInfo> GetCurrentCustomerReservationInfo()
+        {
+            using (CarRentalContext entityContext = new CarRentalContext())
+            {
+                var query = from r in entityContext.ReservationSet
+                            join a in entityContext.AccountSet on r.AccountId equals a.AccountId
+                            join c in entityContext.CarSet on r.CarId equals c.CarId
+                            select new CustomerReservationInfo()
+                            {
+                                Account = a,
+                                Car = c,
+                                Reservation = r
+                            };
 
+                return query.ToFullyLoaded();
+            }
+        }
 
-        //public IEnumerable<CustomerReservationInfo> GetCurrentCustomerReservationInfo()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public IEnumerable<CustomerReservationInfo> GetCustomerOpenReservationInfo(int accountId)
+        {
+            using (CarRentalContext entityContext = new CarRentalContext())
+            {
+                var query = from r in entityContext.ReservationSet
+                            join a in entityContext.AccountSet on r.AccountId equals a.AccountId
+                            join c in entityContext.CarSet on r.CarId equals c.CarId
+                            where r.AccountId == accountId
+                            select new CustomerReservationInfo()
+                            {
+                                Account = a,
+                                Car = c,
+                                Reservation = r
+                            };
+
+                return query.ToFullyLoaded();
+            }
+        }
 
         public IEnumerable<Reservation> GetReservationsByPickupDate(DateTime pickupDate)
         {

@@ -1,5 +1,4 @@
 ﻿using CarRental.Business.Entities;
-using Core.Common.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace CarRental.Data.Contracts
 {
-    public interface ICarRepository : IDataRepository<Car>
+    public class CustomerRentalInfo
     {
+        public Account Customer { get; set; }
+        public Car Car { get; set; }
+        public Rental Rental { get; set; }
     }
 }

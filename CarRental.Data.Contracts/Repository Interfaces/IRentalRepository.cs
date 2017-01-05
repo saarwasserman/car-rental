@@ -1,4 +1,5 @@
 ﻿using CarRental.Business.Entities;
+using CarRental.Data.Contracts;
 using Core.Common.Contracts;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Data.Contracts.Repository_Interfaces
+namespace CarRental.Data.Contracts
 {
     public interface IRentalRepository : IDataRepository<Rental>
     {
@@ -14,6 +15,6 @@ namespace CarRental.Data.Contracts.Repository_Interfaces
         Rental GetCurrentRentalByCar(int carId);
         IEnumerable<Rental> GetCurrentlyRentedCars();
         IEnumerable<Rental> GetRentalHistoryByAccount(int accountId);
-        //IEnumerable<CustomerRentalInfo> GetCurrentCustomerRentalInfo();
+        IEnumerable<CustomerRentalInfo> GetCurrentCustomerRentalInfo();
     }
 }

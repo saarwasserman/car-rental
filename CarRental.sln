@@ -29,6 +29,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Data.Tests", "Car
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Data.Contracts", "CarRental.Data.Contracts\CarRental.Data.Contracts.csproj", "{85E8B80B-69BC-4005-8186-4A3CFE71EBBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Business.Bootstrapper", "CarRental.Business.Bootstrapper\CarRental.Business.Bootstrapper.csproj", "{E4A00C62-BF1D-4769-BB86-1CB7BE22B306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Business.Common", "CarRental.Business.Common\CarRental.Business.Common.csproj", "{2E17F09A-4A9D-40FF-A03B-C6BF075E4EBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Business.Contracts", "CarRental.Business.Contracts\CarRental.Business.Contracts.csproj", "{657FA2B4-665D-4D13-9187-620BD165FB78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Business.Managers", "CarRental.Business.Managers\CarRental.Business.Managers.csproj", "{2F8D41C8-018C-4AE4-9A08-AFC3EC5F4A4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +75,22 @@ Global
 		{85E8B80B-69BC-4005-8186-4A3CFE71EBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85E8B80B-69BC-4005-8186-4A3CFE71EBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85E8B80B-69BC-4005-8186-4A3CFE71EBBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A00C62-BF1D-4769-BB86-1CB7BE22B306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A00C62-BF1D-4769-BB86-1CB7BE22B306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A00C62-BF1D-4769-BB86-1CB7BE22B306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A00C62-BF1D-4769-BB86-1CB7BE22B306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E17F09A-4A9D-40FF-A03B-C6BF075E4EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E17F09A-4A9D-40FF-A03B-C6BF075E4EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E17F09A-4A9D-40FF-A03B-C6BF075E4EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E17F09A-4A9D-40FF-A03B-C6BF075E4EBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{657FA2B4-665D-4D13-9187-620BD165FB78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{657FA2B4-665D-4D13-9187-620BD165FB78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{657FA2B4-665D-4D13-9187-620BD165FB78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{657FA2B4-665D-4D13-9187-620BD165FB78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F8D41C8-018C-4AE4-9A08-AFC3EC5F4A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8D41C8-018C-4AE4-9A08-AFC3EC5F4A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8D41C8-018C-4AE4-9A08-AFC3EC5F4A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8D41C8-018C-4AE4-9A08-AFC3EC5F4A4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +104,9 @@ Global
 		{4253CDC7-DC81-4792-993C-8B9AA8B3D535} = {055A57FE-9CB7-46D6-9C29-B6E84CE1B869}
 		{C59E2792-790C-4EBD-9100-61EE7209E464} = {D292B3E3-3F41-4267-9E73-24E096665011}
 		{85E8B80B-69BC-4005-8186-4A3CFE71EBBD} = {055A57FE-9CB7-46D6-9C29-B6E84CE1B869}
+		{E4A00C62-BF1D-4769-BB86-1CB7BE22B306} = {008EED61-5884-4BE5-9766-75D9E3AF5467}
+		{2E17F09A-4A9D-40FF-A03B-C6BF075E4EBC} = {008EED61-5884-4BE5-9766-75D9E3AF5467}
+		{657FA2B4-665D-4D13-9187-620BD165FB78} = {008EED61-5884-4BE5-9766-75D9E3AF5467}
+		{2F8D41C8-018C-4AE4-9A08-AFC3EC5F4A4E} = {008EED61-5884-4BE5-9766-75D9E3AF5467}
 	EndGlobalSection
 EndGlobal

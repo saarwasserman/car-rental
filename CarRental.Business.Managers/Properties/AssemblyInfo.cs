@@ -1,17 +1,16 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Runtime.Serialization;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CarRental.Client.Entities")]
+[assembly: AssemblyTitle("CarRental.Business.Managers")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CarRental.Client.Entities")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyProduct("CarRental.Business.Managers")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -21,7 +20,7 @@ using System.Runtime.Serialization;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5d861a7b-66dc-48e2-ab39-46ff3c884a17")]
+[assembly: Guid("2f8d41c8-018c-4ae4-9a08-afc3ec5f4a4e")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -35,6 +34,3 @@ using System.Runtime.Serialization;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-[assembly: ContractNamespace("http://www.wasserman.com/saar/carrentel",
-                             ClrNamespace = "CarRental.Business.Entities")]
