@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Business.Common
+namespace Core.Common.Contracts
 {
-    public class Class1
+    public interface IBusinessEngineFactory
     {
+        T GetBusinessEngine<T>() where T : IBusinessEngine;
     }
 }

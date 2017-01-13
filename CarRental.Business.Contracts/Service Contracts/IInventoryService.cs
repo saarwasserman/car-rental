@@ -19,5 +19,16 @@ namespace CarRental.Business.Contracts
         [OperationContract]
         [FaultContract(typeof(NotFoundException))]
         Car[] GetAllCars();
+
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        Car UpdateCar(Car car);
+
+        [OperationContract]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        void DeleteCar(int carId);
+
+        [OperationContract]
+        Car[] GetAvailableCars(DateTime pickupDate, DateTime returnDate);
     }
 }
