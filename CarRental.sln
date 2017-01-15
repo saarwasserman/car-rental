@@ -45,6 +45,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Common", "CarRent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Common.ServiceModel", "Core.Common.ServiceModel\Core.Common.ServiceModel.csproj", "{42DAAAF7-A384-40C3-B935-167B77BF1AF2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Business.Tests", "CarRental.Business.Tests\CarRental.Business.Tests.csproj", "{AB5972DD-A71F-4302-B066-E0EC2C47E93B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Business.Managers.Tests", "CarRental.Business.Managers.Tests\CarRental.Business.Managers.Tests.csproj", "{3D417AC3-45C6-472B-865D-526227B5388A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{42DAAAF7-A384-40C3-B935-167B77BF1AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42DAAAF7-A384-40C3-B935-167B77BF1AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42DAAAF7-A384-40C3-B935-167B77BF1AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB5972DD-A71F-4302-B066-E0EC2C47E93B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB5972DD-A71F-4302-B066-E0EC2C47E93B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5972DD-A71F-4302-B066-E0EC2C47E93B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB5972DD-A71F-4302-B066-E0EC2C47E93B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D417AC3-45C6-472B-865D-526227B5388A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D417AC3-45C6-472B-865D-526227B5388A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D417AC3-45C6-472B-865D-526227B5388A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D417AC3-45C6-472B-865D-526227B5388A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -131,5 +143,7 @@ Global
 		{C87A2C3E-4497-4133-AA75-DEB9A736138B} = {008EED61-5884-4BE5-9766-75D9E3AF5467}
 		{9AE40032-A343-4511-8431-B14FE1C65D5B} = {A02DDAF8-3674-49B5-9BF8-BA443D2152C8}
 		{42DAAAF7-A384-40C3-B935-167B77BF1AF2} = {A7D48DEF-3585-41FD-A740-9A63B810E9DE}
+		{AB5972DD-A71F-4302-B066-E0EC2C47E93B} = {D292B3E3-3F41-4267-9E73-24E096665011}
+		{3D417AC3-45C6-472B-865D-526227B5388A} = {D292B3E3-3F41-4267-9E73-24E096665011}
 	EndGlobalSection
 EndGlobal

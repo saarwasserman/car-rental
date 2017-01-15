@@ -15,15 +15,30 @@ namespace CarRental.Business.Contracts
     {
         [OperationContract]
         [FaultContract(typeof(NotFoundException))]
+        [FaultContract(typeof(UnableToRentForDateException))]
+        [FaultContract(typeof(CarCurrentlyRentedException))]
         [FaultContract(typeof(AuthorizationValidationException))]
         [TransactionFlow(TransactionFlowOption.Allowed)]
         Rental RentCarToCustomer(string loginEmail, int carId, DateTime dateDueBack);
 
         [OperationContract]
         [FaultContract(typeof(NotFoundException))]
+        [FaultContract(typeof(UnableToRentForDateException))]
+        [FaultContract(typeof(CarCurrentlyRentedException))]
         [FaultContract(typeof(AuthorizationValidationException))]
         [TransactionFlow(TransactionFlowOption.Allowed)]
         Rental RentCarToCustomer(string loginEmail, int carId, DateTime rentalDate, DateTime dateDueBack);
+
+        [OperationContract]
+        [FaultContract(typeof(NotFoundException))]
+        [FaultContract(typeof(AuthorizationValidationException))]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
+        void AcceptCarReturn(int carId);
+
+        [OperationContract]
+        [FaultContract(typeof(NotFoundException))]
+        [FaultContract(typeof(AuthorizationValidationException))]
+        Reservation GetReservation(int reservationId);
 
         [OperationContract]
         [FaultContract(typeof(NotFoundException))]
@@ -38,6 +53,8 @@ namespace CarRental.Business.Contracts
 
         [OperationContract]
         [FaultContract(typeof(NotFoundException))]
+        [FaultContract(typeof(UnableToRentForDateException))]
+        [FaultContract(typeof(CarCurrentlyRentedException))]
         [FaultContract(typeof(AuthorizationValidationException))]
         [TransactionFlow(TransactionFlowOption.Allowed)]
         void ExecuteRentalFromReservation(int reservationId);

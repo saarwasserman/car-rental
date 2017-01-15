@@ -123,11 +123,33 @@ namespace CarRental.Business.Managers.Managers
         [OperationBehavior(TransactionScopeRequired = true)]
         [PrincipalPermission(SecurityAction.Demand, Role = Security.CarRentalAdmin)]
         [PrincipalPermission(SecurityAction.Demand, Name = Security.CarRentalUser)]
-        public Reservation MakeReservation(string loginEmail, int CarId, DateTime rentalDate, DateTime returnDate)
+        public Reservation MakeReservation(string loginEmail, int carId, DateTime rentalDate, DateTime returnDate)
         {
             return ExecuteFaultHandledOperation(() =>
             {
-                throw new NotImplementedException();
+                IAccountRepository accountRepository = _DataRepositoryFactory.GetDataRepository<IAccountRepository>();
+                IReservationRepository reservationRepository = _DataRepositoryFactory.GetDataRepository<IReservationRepository>();
+
+                Account account = accountRepository.GetByLogin(loginEmail);
+                if (account == null)
+                {
+                    NotFoundException ex = new NotFoundException(string.Format("No account found for login '{0}'.", loginEmail));
+                    throw new FaultException<NotFoundException>(ex, ex.Message);
+                }
+
+                ValidateAuthorization(account);
+
+                Reservation reservation = new Reservation()
+                {
+                    AccountId = account.AccountId,
+                    CarId = carId,
+                    RentalDate = rentalDate,
+                    ReturnDate = returnDate
+                };
+
+                Reservation savedEntity = reservationRepository.Add(reservation);
+
+                return savedEntity;
             });
         }
 
@@ -351,6 +373,49 @@ namespace CarRental.Business.Managers.Managers
                 ICarRentalEngine carRentalEngine = _BusinessEngineFactory.GetBusinessEngine<ICarRentalEngine>();
 
                 return carRentalEngine.IsCarCurrentlyRented(carId);
+            });
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true)]
+        [PrincipalPermission(SecurityAction.Demand, Role = Security.CarRentalAdmin)]
+        public void AcceptCarReturn(int carId)
+        {
+            ExecuteFaultHandledOperation(() =>
+            {
+                IRentalRepository rentalRepository = _DataRepositoryFactory.GetDataRepository<IRentalRepository>();
+                ICarRepository carRespository = _DataRepositoryFactory.GetDataRepository<ICarRepository>();
+
+                Rental rental = rentalRepository.GetCurrentRentalByCar(carId);
+                if (rental == null)
+                {
+                    NotFoundException ex = new NotFoundException(string.Format("Car '{0}' is not rented", carId));
+                    throw new FaultException<NotFoundException>(ex, ex.Message);
+                }
+
+                rental.DateReturned = DateTime.Now;
+
+                rentalRepository.Update(rental);
+            });
+        }
+
+        [PrincipalPermission(SecurityAction.Demand, Role = Security.CarRentalAdmin)]
+        [PrincipalPermission(SecurityAction.Demand, Name = Security.CarRentalUser)]
+        public Reservation GetReservation(int reservationId)
+        {
+            return ExecuteFaultHandledOperation(() =>
+            {
+                IReservationRepository reservationRepository = _DataRepositoryFactory.GetDataRepository<IReservationRepository>();
+
+                Reservation reservation = reservationRepository.Get(reservationId);
+                if (reservation == null)
+                {
+                    NotFoundException ex = new NotFoundException(string.Format("No reservation record found for id '{0}", reservationId));
+                    throw new FaultException<NotFoundException>(ex, ex.Message);
+                }
+
+                ValidateAuthorization(reservation);
+
+                return reservation;
             });
         }
     }

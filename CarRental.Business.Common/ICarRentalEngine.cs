@@ -10,8 +10,11 @@ namespace CarRental.Business.Common
 {
     public interface ICarRentalEngine : IBusinessEngine
     {
+        bool IsCarCurrentlyRented(int carId, int accountId);
+        bool IsCarCurrentlyRented(int carId);
         bool IsCarAvailable(int carId, DateTime pickupDate,
             DateTime returnDate, IEnumerable<Rental> rentedCars,
             IEnumerable<Reservation> reservedCars);
+        Rental RentCarToCustomer(string loginEmail, int carId, DateTime rentalDate, DateTime returnDate);
     }
 }
