@@ -16,10 +16,11 @@ using System.Security.Permissions;
 using CarRental.Business.Common;
 
 
-namespace CarRental.Business.Managers.Managers
+namespace CarRental.Business.Managers
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall,
-        ConcurrencyMode = ConcurrencyMode.Multiple)]
+        ConcurrencyMode = ConcurrencyMode.Multiple,
+        ReleaseServiceInstanceOnTransactionComplete = false)]
     public class RentalManager : ManagerBase, IRentalService
     {
         public RentalManager()

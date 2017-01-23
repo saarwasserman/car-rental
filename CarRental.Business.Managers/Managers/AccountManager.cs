@@ -13,7 +13,7 @@ using CarRental.Common;
 using CarRental.Data.Contracts;
 using Core.Common.Exceptions;
 
-namespace CarRental.Business.Managers.Managers
+namespace CarRental.Business.Managers
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall,
     ConcurrencyMode = ConcurrencyMode.Multiple,

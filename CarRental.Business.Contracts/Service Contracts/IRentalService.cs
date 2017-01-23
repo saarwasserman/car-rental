@@ -13,7 +13,7 @@ namespace CarRental.Business.Contracts
     [ServiceContract]
     public interface IRentalService
     {
-        [OperationContract]
+        [OperationContract(Name = "RentCarToCustomerWithNoReservation")]
         [FaultContract(typeof(NotFoundException))]
         [FaultContract(typeof(UnableToRentForDateException))]
         [FaultContract(typeof(CarCurrentlyRentedException))]

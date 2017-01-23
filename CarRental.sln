@@ -49,6 +49,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Business.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Business.Managers.Tests", "CarRental.Business.Managers.Tests\CarRental.Business.Managers.Tests.csproj", "{3D417AC3-45C6-472B-865D-526227B5388A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosting", "Hosting", "{E8899BD7-A2E4-46A3-A7D0-932F992ADB0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.ServiceHost.Console", "CarRental.ServiceHost.Console\CarRental.ServiceHost.Console.csproj", "{C2E4A1F9-4530-4AAC-8BA9-402D1F70F6EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.ServiceHost.Tests", "CarRental.ServiceHost.Tests\CarRental.ServiceHost.Tests.csproj", "{53C96329-806C-4CED-A5ED-CC5889DA8647}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +129,14 @@ Global
 		{3D417AC3-45C6-472B-865D-526227B5388A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D417AC3-45C6-472B-865D-526227B5388A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D417AC3-45C6-472B-865D-526227B5388A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2E4A1F9-4530-4AAC-8BA9-402D1F70F6EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E4A1F9-4530-4AAC-8BA9-402D1F70F6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E4A1F9-4530-4AAC-8BA9-402D1F70F6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E4A1F9-4530-4AAC-8BA9-402D1F70F6EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53C96329-806C-4CED-A5ED-CC5889DA8647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C96329-806C-4CED-A5ED-CC5889DA8647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C96329-806C-4CED-A5ED-CC5889DA8647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C96329-806C-4CED-A5ED-CC5889DA8647}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -145,5 +159,7 @@ Global
 		{42DAAAF7-A384-40C3-B935-167B77BF1AF2} = {A7D48DEF-3585-41FD-A740-9A63B810E9DE}
 		{AB5972DD-A71F-4302-B066-E0EC2C47E93B} = {D292B3E3-3F41-4267-9E73-24E096665011}
 		{3D417AC3-45C6-472B-865D-526227B5388A} = {D292B3E3-3F41-4267-9E73-24E096665011}
+		{C2E4A1F9-4530-4AAC-8BA9-402D1F70F6EA} = {E8899BD7-A2E4-46A3-A7D0-932F992ADB0C}
+		{53C96329-806C-4CED-A5ED-CC5889DA8647} = {D292B3E3-3F41-4267-9E73-24E096665011}
 	EndGlobalSection
 EndGlobal

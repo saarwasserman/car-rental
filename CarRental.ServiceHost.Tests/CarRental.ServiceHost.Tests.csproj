@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3D417AC3-45C6-472B-865D-526227B5388A}</ProjectGuid>
+    <ProjectGuid>{53C96329-806C-4CED-A5ED-CC5889DA8647}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CarRental.Business.Managers.Tests</RootNamespace>
-    <AssemblyName>CarRental.Business.Managers.Tests</AssemblyName>
+    <RootNamespace>CarRental.ServiceHost.Tests</RootNamespace>
+    <AssemblyName>CarRental.ServiceHost.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,15 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Moq, Version=4.5.30.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\packages\Moq.4.5.30\lib\net45\Moq.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ServiceModel" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -58,37 +51,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="InventoryManagerTests.cs" />
+    <Compile Include="ServiceAccessTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarRental.Business.Contracts\CarRental.Business.Contracts.csproj">
-      <Project>{657fa2b4-665d-4d13-9187-620bd165fb78}</Project>
-      <Name>CarRental.Business.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CarRental.Business.Entities\CarRental.Business.Entities.csproj">
-      <Project>{05EC2AE0-F7CC-4718-90C4-8B9F17341621}</Project>
-      <Name>CarRental.Business.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CarRental.Business.Managers\CarRental.Business.Managers.csproj">
-      <Project>{2F8D41C8-018C-4AE4-9A08-AFC3EC5F4A4E}</Project>
-      <Name>CarRental.Business.Managers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CarRental.Data.Contracts\CarRental.Data.Contracts.csproj">
-      <Project>{85e8b80b-69bc-4005-8186-4a3cfe71ebbd}</Project>
-      <Name>CarRental.Data.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Core.Common.Contracts\Core.Common.Contracts.csproj">
-      <Project>{5F9B5530-F150-4BF0-9D07-0AD8A4C6EF7D}</Project>
-      <Name>Core.Common.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Core.Common\Core.Common.csproj">
-      <Project>{F6BCFF98-A714-4B7B-978F-23D812D1744A}</Project>
-      <Name>Core.Common</Name>
-    </ProjectReference>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\CarRental.Business.Contracts\CarRental.Business.Contracts.csproj">
+      <Project>{657FA2B4-665D-4D13-9187-620BD165FB78}</Project>
+      <Name>CarRental.Business.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
